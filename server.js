@@ -1,5 +1,5 @@
 var env = process.env.NODE_ENV || 'development',
-    config = require('./config.js')[env],
+    config = require('./config')[env],
     mongoose = require('mongoose')
 
 var connect = function () {
@@ -17,11 +17,9 @@ mongoose.connection.on('disconnected', function () {
 })
 
 var express = require('express')
-var app = express()
+app = express()
 
-app.get('/', function(req, res) {
-    res.send("Hello!")
-});
+require('./routes')
 
 var port = process.env.PORT || 5000;
 app.listen(port);
