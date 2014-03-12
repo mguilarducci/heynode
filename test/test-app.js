@@ -1,8 +1,7 @@
 var should = require('should'),
     request = require('supertest')
 
-
-var app = require('../server.js')
+var app = require('../app.js')
 
 describe('app', function() {
     it('should exist', function(done) {
